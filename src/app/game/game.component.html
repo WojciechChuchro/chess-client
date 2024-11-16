@@ -1,0 +1,20 @@
+<button (click)="play()">start game</button>
+<div class="chess-board">
+  <div *ngFor="let row of board; let rowIndex = index" class="row">
+    <div
+      *ngFor="let cell of row; let colIndex = index"
+      class="cell"
+      [ngStyle]="{
+        'background-color': (rowIndex + colIndex) % 2 === 0 ? 'white' : 'brown'
+      }"
+        (click)="selectCell(rowIndex, colIndex)"
+    >
+        <img
+        *ngIf="cell"
+        [src]="cell.imageUrl"
+        [alt]="cell.color"
+        class="cell-image"
+      />
+    </div>
+  </div>
+</div>

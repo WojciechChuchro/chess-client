@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
   styleUrl: './header.component.sass'
 })
 export class HeaderComponent {
+    currentSelection: string = "home"
+
+    onLinkClick(currentSelection: string): void {
+        this.currentSelection = currentSelection
+    }
 
 }
